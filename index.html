@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phantom Hack Club</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    /* Universal reset and smooth scroll */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #fff;
+      background-color: #050505;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 255, 255, 0.05),
+        rgba(0, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 40px
+      );
+      animation: moveGrid 60s linear infinite;
+    }
+
+    body::after {
+      background: radial-gradient(circle at center, rgba(0,255,255,0.1) 0%, transparent 70%),
+                  radial-gradient(circle at top right, rgba(0,255,255,0.05), transparent 80%);
+      animation: pulseGlow 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveGrid {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-50%, -50%); }
+    }
+
+    @keyframes pulseGlow {
+      0% { opacity: 0.1; }
+      100% { opacity: 0.3; }
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 20px 50px;
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 20px #00ffff80;
+    }
+
+    .logo-container img {
+      height: 180px;
+      filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 30px #00ffff);
+      animation: glowPulse 3s infinite ease-in-out;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+      animation: typing 4s steps(30, end) forwards, blink 0.7s infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00ffff;
+      width: 0;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #00ffff; }
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 100px 50px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #00ffff44;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00ffff99;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      font-size: 0.9rem;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    #clock {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00ffff;
+      color: #000;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+
+      .logo-container img {
+        height: 130px;
+      }
+    }
+  </style>
+</head>
+<body onload="speakGreeting(); updateClock();">
+  <header>
+    <div class="logo-container">
+      <img src="phantom-hack-club.png" alt="Phantom Hack Club Logo" />
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div>
+      <h2>Welcome to Phantom Hack Club</h2>
+      <p>Empowering young innovators through code, creativity, and community. Join us in building the future of tech.</p>
+      <div id="clock"></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center;">Phantom Hack Club is a student-led initiative where we build, collaborate, and grow our skills through projects, open source, and fun events!</p>
+  </section>
+
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <div class="features">
+      <div class="feature"><h3>CodeCamp</h3><p>Summer hackathon with mentors and prizes.</p></div>
+      <div class="feature"><h3>Build Nights</h3><p>Weekly collabs on real-world projects.</p></div>
+      <div class="feature"><h3>Workshops</h3><p>Learn Python, JS, Git, Linux and more.</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="features">
+      <div class="feature"><h3>PhantomBot</h3><p>AI assistant for managing the club.</p></div>
+      <div class="feature"><h3>EcoTrack</h3><p>IoT waste tracking with Arduino + Firebase.</p></div>
+      <div class="feature"><h3>CodeMate</h3><p>Code collab platform built in React.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center;">Email: phantompulse.hackclub@gmail.com</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Phantom Hack Club | Made with 💻 + ❤️</p>
+  </footer>
+
+  <button id="scrollTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Top</button>
+
+  <script>
+    function speakGreeting() {
+      const msg = new SpeechSynthesisUtterance("Welcome to Phantom Hack Club! This is your futuristic tech space.");
+      msg.lang = "en-IN";
+      msg.pitch = 1.2;
+      msg.rate = 1;
+      msg.volume = 1;
+
+      function speakIt() {
+        const voices = speechSynthesis.getVoices();
+        msg.voice = voices.find(v => v.lang === "en-IN" && v.name.toLowerCase().includes("female")) || voices.find(v => v.lang === "en-IN") || voices[0];
+        speechSynthesis.speak(msg);
+      }
+
+      if (speechSynthesis.getVoices().length) {
+        speakIt();
+      } else {
+        speechSynthesis.onvoiceschanged = speakIt;
+      }
+    }
+
+    function updateClock() {
+      setInterval(() => {
+        const now = new Date();
+        const clock = document.getElementById("clock");
+        clock.textContent = now.toLocaleTimeString();
+      }, 1000);
+    }
+
+    window.onscroll = function () {
+      document.getElementById("scrollTopBtn").style.display = window.scrollY > 100 ? "block" : "none";
+    };
+  </script>
+</body>
+</html>
