@@ -42,7 +42,7 @@ function EventsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://source.unsplash.com/random/600x400/?hackathon" 
+                    src="/images/pic1.jpg"
                     alt="Summer Hackathon 2024" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
@@ -59,7 +59,7 @@ function EventsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://source.unsplash.com/random/600x400/?ai,workshop" 
+                    src="/images/pic4.jpg"  
                     alt="AI Workshop Series" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
@@ -76,7 +76,7 @@ function EventsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://source.unsplash.com/random/600x400/?blockchain,tech" 
+                    src="/images/pic2.jpg"  
                     alt="Web3 Tech Talk" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
@@ -93,7 +93,7 @@ function EventsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://source.unsplash.com/random/600x400/?gaming,development" 
+                    src="/images/pic1.jpg"  
                     alt="Game Development Workshop" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
