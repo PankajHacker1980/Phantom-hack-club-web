@@ -9,6 +9,8 @@
 :root {
   --primary-glow: #00ffff;
   --text-glow: 0 0 10px rgba(0, 255, 255, 0.7);
+  --neon-color: #00ffff;
+  --cube-size: 100px;
 }
 
 body {
@@ -17,6 +19,7 @@ body {
   color: white;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 .font-orbitron {
@@ -35,18 +38,354 @@ body {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-.animate-pulse-slow {
-  animation: pulse 3s infinite;
+.shadow-neon {
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7),
+              0 0 10px rgba(0, 255, 255, 0.5),
+              0 0 20px rgba(0, 255, 255, 0.3),
+              inset 0 0 5px rgba(0, 255, 255, 0.2);
 }
 
-/* Typewriter effect */
-.typewriter-effect {
-  overflow: hidden;
-  border-right: 3px solid var(--primary-glow);
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.15em;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+/* Neon Button Effects */
+.neon-button {
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7),
+              0 0 10px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7),
+              0 0 10px rgba(0, 255, 255, 0.5),
+              0 0 15px rgba(0, 255, 255, 0.3),
+              0 0 20px rgba(0, 255, 255, 0.1);
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
+
+.neon-button-filled {
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7),
+              0 0 10px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.neon-button-filled:hover {
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7),
+              0 0 10px rgba(0, 255, 255, 0.5),
+              0 0 15px rgba(0, 255, 255, 0.3),
+              0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* 3D Cube Animation */
+.cube {
+  width: var(--cube-size);
+  height: var(--cube-size);
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(-30deg);
+  animation: cube-spin 20s infinite linear;
+}
+
+.cube-face {
+  position: absolute;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  border: 1px solid var(--neon-color);
+  background-color: rgba(0, 255, 255, 0.05);
+  opacity: 0.7;
+}
+
+.cube-face-front {
+  transform: translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-face-back {
+  transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-face-right {
+  transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-face-left {
+  transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-face-top {
+  transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-face-bottom {
+  transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+@keyframes cube-spin {
+  0% {
+    transform: rotateX(-15deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-15deg) rotateY(360deg);
+  }
+}
+
+/* Binary Rain Animation */
+.binary-rain {
+  display: flex;
+  gap: 8px;
+}
+
+.binary-column {
+  display: flex;
+  flex-direction: column;
+  animation: binary-fall 10s infinite linear;
+}
+
+@keyframes binary-fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Blob Animation */
+@keyframes blob {
+  0% {
+    transform: scale(1) translate(0px, 0px);
+  }
+  33% {
+    transform: scale(1.1) translate(30px, -50px);
+  }
+  66% {
+    transform: scale(0.9) translate(-20px, 20px);
+  }
+  100% {
+    transform: scale(1) translate(0px, 0px);
+  }
+}
+
+.animate-blob {
+  animation: blob 10s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Tech Icon Glow Effect */
+.tech-icon {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  text-shadow: 0 0 5px var(--neon-color),
+               0 0 10px var(--neon-color),
+               0 0 15px var(--neon-color);
+}
+
+/* Glitch Effect */
+.glitch-container {
+  position: relative;
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff00ff;
+  animation: glitch-animation-1 3s infinite linear alternate-reverse;
+  opacity: 0.8;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: 2px 0 #00ffff;
+  animation: glitch-animation-2 2.5s infinite linear alternate-reverse;
+  opacity: 0.8;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-animation-1 {
+  0% {
+    transform: none;
+    opacity: 0.8;
+  }
+  7% {
+    transform: translate(2px, 3px);
+    opacity: 0.9;
+  }
+  10% {
+    transform: none;
+    opacity: 0.8;
+  }
+  27% {
+    transform: none;
+    opacity: 0.8;
+  }
+  30% {
+    transform: translate(5px, 2px);
+    opacity: 0.6;
+  }
+  35% {
+    transform: none;
+    opacity: 0.8;
+  }
+  52% {
+    transform: none;
+    opacity: 0.8;
+  }
+  55% {
+    transform: translate(-2px, 1px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: none;
+    opacity: 0.8;
+  }
+  72% {
+    transform: none;
+    opacity: 0.8;
+  }
+  75% {
+    transform: translate(2px, 6px);
+    opacity: 0.3;
+  }
+  80% {
+    transform: none;
+    opacity: 0.8;
+  }
+  100% {
+    transform: none;
+    opacity: 0.8;
+  }
+}
+
+@keyframes glitch-animation-2 {
+  0% {
+    transform: none;
+    opacity: 0.8;
+  }
+  7% {
+    transform: translate(-2px, -3px);
+    opacity: 0.9;
+  }
+  10% {
+    transform: none;
+    opacity: 0.8;
+  }
+  27% {
+    transform: none;
+    opacity: 0.8;
+  }
+  30% {
+    transform: translate(-5px, -2px);
+    opacity: 0.6;
+  }
+  35% {
+    transform: none;
+    opacity: 0.8;
+  }
+  52% {
+    transform: none;
+    opacity: 0.8;
+  }
+  55% {
+    transform: translate(2px, -1px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: none;
+    opacity: 0.8;
+  }
+  72% {
+    transform: none;
+    opacity: 0.8;
+  }
+  75% {
+    transform: translate(-2px, -6px);
+    opacity: 0.3;
+  }
+  80% {
+    transform: none;
+    opacity: 0.8;
+  }
+  100% {
+    transform: none;
+    opacity: 0.8;
+  }
+}
+
+/* Cyber grid */
+.cyber-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  transform: perspective(500px) rotateX(30deg);
+  transform-origin: center top;
+  animation: grid-move 15s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 40px;
+  }
+}
+
+/* Additional animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+@keyframes expand-width {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes bounce-slow {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-10px) translateX(-50%); }
+  60% { transform: translateY(-5px) translateX(-50%); }
 }
 
 @keyframes typing {
@@ -66,6 +405,29 @@ body {
   50% {
     filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.9));
   }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  transition: all 0.3s;
+  background-color: rgba(0, 255, 255, 0.2);
+  &:hover {
+    background-color: rgba(0, 255, 255, 0.4);
+  }
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
 }
 
 /* Custom scrollbar */
