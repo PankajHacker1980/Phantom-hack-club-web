@@ -17,7 +17,7 @@ const Events = ({ limit = 0, showAll = false }) => {
       date: "2025-09-15T09:00:00",
       description: "A 48-hour coding marathon focused on building solutions for climate tech innovations.",
       location: "Innovation Hub, Main Campus",
-      image: "https://source.unsplash.com/random/600x400/?coding,hackathon"
+      image: "https://img.freepik.com/free-vector/coming-soon-text-grunge-background_91128-1643.jpg"
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Events = ({ limit = 0, showAll = false }) => {
       date: "2025-08-20T18:00:00",
       description: "A four-part workshop series exploring blockchain technology and Web3 development.",
       location: "Virtual Event",
-      image: "https://source.unsplash.com/random/600x400/?blockchain,crypto"
+      image: "https://img.freepik.com/free-vector/coming-soon-text-grunge-background_91128-1643.jpg"
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const Events = ({ limit = 0, showAll = false }) => {
       date: "2025-10-05T14:00:00",
       description: "Expert panel discussing the ethical implications of artificial intelligence in today's world.",
       location: "Auditorium A, Science Building",
-      image: "https://source.unsplash.com/random/600x400/?ai,robot"
+      image: "https://img.freepik.com/free-vector/coming-soon-text-grunge-background_91128-1643.jpg"
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ const Events = ({ limit = 0, showAll = false }) => {
       date: "2025-11-12T10:00:00",
       description: "A weekend-long game development marathon. Create a game from scratch in 48 hours!",
       location: "Computer Lab 3, Tech Center",
-      image: "https://source.unsplash.com/random/600x400/?gaming,development"
+      image: "https://img.freepik.com/free-vector/coming-soon-text-grunge-background_91128-1643.jpg"
     }
   ];
 

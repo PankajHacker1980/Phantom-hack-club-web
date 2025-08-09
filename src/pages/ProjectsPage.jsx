@@ -41,7 +41,7 @@ function ProjectsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://source.unsplash.com/random/600x400/?environment,technology" 
+                    src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.textstudio.com%2Fword-logos%2Fproject-5619&psig=AOvVaw050FTWW7p8-0cu5QC7-QMX&ust=1754868541160000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjEz_fw_o4DFQAAAAAdAAAAABAE" 
                     alt="EcoTrack Project" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
@@ -57,7 +57,7 @@ function ProjectsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="https://source.unsplash.com/random/600x400/?education,mentor" 
+                    src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.textstudio.com%2Fword-logos%2Fproject-5619&psig=AOvVaw050FTWW7p8-0cu5QC7-QMX&ust=1754868541160000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjEz_fw_o4DFQAAAAAdAAAAABAE" 
                     alt="ConnectEd Project" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
