@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import Events from '../components/Events';
-import ParticlesBackground from '../components/ParticlesBackground';
+import Events from '@/components/Events';
+import ParticlesBackground from '@/components/ParticlesBackground';
 
 function EventsPage() {
   useEffect(() => {
