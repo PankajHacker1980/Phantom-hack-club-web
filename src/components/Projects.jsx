@@ -8,7 +8,7 @@ const Projects = ({ limit = 0, showAll = false }) => {
       title: "PhantomBot AI Assistant",
       description: "An AI-powered virtual assistant built with natural language processing to help club members access resources and information.",
       technologies: ["Python", "TensorFlow", "React", "Node.js"],
-      image: "/images/pic5.png",
+      image: "/images/pic11.png",
       link: "https://github.com/phantomhackclub/phantom-bot"
     },
     {
@@ -16,7 +16,7 @@ const Projects = ({ limit = 0, showAll = false }) => {
       title: "AR Campus Navigator",
       description: "Augmented reality application that helps new students navigate the campus with interactive waypoints and information overlays.",
       technologies: ["Unity", "ARCore", "C#", "3D Modeling"],
-      image: "/images/pic5.png",
+      image: "/images/pic12.png",
       link: "https://github.com/phantomhackclub/ar-navigator"
     },
     {
@@ -24,7 +24,7 @@ const Projects = ({ limit = 0, showAll = false }) => {
       title: "Eco-Track Monitoring System",
       description: "IoT-based environmental monitoring system that tracks air quality, temperature, and humidity with a real-time dashboard.",
       technologies: ["Arduino", "IoT", "React", "Express", "MongoDB"],
-      image: "/images/pic5.png",
+      image: "/images/pic13.png",
       link: "https://github.com/phantomhackclub/eco-track"
     },
     {
@@ -32,7 +32,7 @@ const Projects = ({ limit = 0, showAll = false }) => {
       title: "StudyBuddy Platform",
       description: "A collaborative learning platform connecting students with study partners and resources for various subjects and courses.",
       technologies: ["Vue.js", "Firebase", "Tailwind CSS", "WebRTC"],
-      image: "/images/pic5.png",
+      image: "/images/pic14.png",
       link: "https://github.com/phantomhackclub/study-buddy"
     },
     {
@@ -40,7 +40,7 @@ const Projects = ({ limit = 0, showAll = false }) => {
       title: "Blockchain Voting System",
       description: "A secure and transparent voting system built on blockchain technology for student government elections.",
       technologies: ["Solidity", "Ethereum", "Web3.js", "React"],
-      image: "/images/pic5.png",
+      image: "/images/pic15.png",
       link: "https://github.com/phantomhackclub/block-vote"
     },
     {
@@ -48,7 +48,7 @@ const Projects = ({ limit = 0, showAll = false }) => {
       title: "Health Tracker App",
       description: "Mobile application for tracking physical activity, nutrition, and mental wellbeing with personalized insights.",
       technologies: ["Flutter", "Firebase", "TensorFlow Lite", "REST API"],
-      image: "/images/pic5.png",
+      image: "/images/pic16.png",
       link: "https://github.com/phantomhackclub/health-track"
     }
   ];

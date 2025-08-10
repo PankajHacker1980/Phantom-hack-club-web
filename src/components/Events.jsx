@@ -17,7 +17,7 @@ const Events = ({ limit = 0, showAll = false }) => {
       date: "2025-09-15T09:00:00",
       description: "A 48-hour coding marathon focused on building solutions for climate tech innovations.",
       location: "Innovation Hub, Main Campus",
-      image: "/images/pic6.png"
+      image: "/images/pic7.png"
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ const Events = ({ limit = 0, showAll = false }) => {
       date: "2025-10-05T14:00:00",
       description: "Expert panel discussing the ethical implications of artificial intelligence in today's world.",
       location: "Auditorium A, Science Building",
-      image: "/images/pic6.png"
+      image: "/images/pic9.png"
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ const Events = ({ limit = 0, showAll = false }) => {
       date: "2025-11-12T10:00:00",
       description: "A weekend-long game development marathon. Create a game from scratch in 48 hours!",
       location: "Computer Lab 3, Tech Center",
-      image: "/images/pic6.png"
+      image: "/images/pic10.png"
     }
   ];
 

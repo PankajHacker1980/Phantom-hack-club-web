@@ -41,7 +41,7 @@ function ProjectsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/images/pic5.png"
+                    src="/images/pic13.png"
                     alt="EcoTrack Project" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
@@ -57,7 +57,7 @@ function ProjectsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/images/pic5.png"
+                    src="/images/pic14.png"
                     alt="ConnectEd Project" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
