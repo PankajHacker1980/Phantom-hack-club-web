@@ -102,7 +102,7 @@ function ProjectsPage() {
             </div>
           </div>
 
-          {/* Open Source Contributions */}
+          {/* Open Source Contributions - Matching Style but No Images */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-8 font-orbitron text-white">
               Open Source Contributions
@@ -113,7 +113,6 @@ function ProjectsPage() {
                   title: "HackClub Resources",
                   description:
                     "Contributing learning materials and project guides to the global Hack Club community.",
-                  image: "/images/pic15.jpg",
                   details:
                     "Our members regularly publish programming guides, workshop materials, and starter kits for the Hack Club network, reaching thousands of young developers worldwide."
                 },
@@ -121,7 +120,6 @@ function ProjectsPage() {
                   title: "AI Study Group",
                   description:
                     "Open source machine learning models and study materials for beginners.",
-                  image: "/images/pic16.jpg",
                   details:
                     "A collaborative initiative where members build and share beginner-friendly AI models, tutorials, and datasets to help others learn and experiment with machine learning."
                 },
@@ -129,20 +127,21 @@ function ProjectsPage() {
                   title: "Web Dev Starter Kit",
                   description:
                     "A collection of templates and components for beginner web developers.",
-                  image: "/images/pic17.jpg",
                   details:
                     "We designed an open-source kit containing responsive templates, reusable UI components, and starter code for HTML, CSS, and JavaScript projects."
                 }
               ].map((project, idx) => (
                 <div
                   key={idx}
-                  className="bg-black/50 p-6 rounded-xl border border-[#00ffff]/30 hover:border-[#00ffff] transition-all duration-300 text-center"
+                  className="bg-black/50 p-6 rounded-xl border border-[#00ffff]/30 hover:border-[#00ffff] transition-all duration-300 group text-center"
                 >
-                  <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-[#00ffff] transition-colors">
+                    {project.title}
+                  </h3>
                   <p className="text-gray-300 mb-4">{project.description}</p>
                   <button
                     onClick={() => handleViewDetails(project)}
-                    className="px-5 py-2 bg-gradient-to-r from-[#00ffff] to-[#0077ff] text-black font-semibold rounded-full hover:from-[#00ccff] hover:to-[#0055ff] transition-all duration-300 shadow-[0_0_10px_#00ffff]"
+                    className="mt-2 px-5 py-2 bg-gradient-to-r from-[#00ffff] to-[#0077ff] text-black font-semibold rounded-full hover:from-[#00ccff] hover:to-[#0055ff] transition-all duration-300 shadow-[0_0_10px_#00ffff]"
                   >
                     View More Details
                   </button>
@@ -186,11 +185,13 @@ function ProjectsPage() {
             <h2 className="text-3xl font-bold mb-4 text-[#00ffff]">
               {selectedProject.title}
             </h2>
-            <img
-              src={selectedProject.image}
-              alt={selectedProject.title}
-              className="w-full h-64 object-cover rounded-lg mb-4"
-            />
+            {selectedProject.image && (
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-64 object-cover rounded-lg mb-4"
+              />
+            )}
             <p className="text-gray-300 mb-4">{selectedProject.details}</p>
           </div>
         </div>
