@@ -95,8 +95,10 @@ function ProjectsPage() {
               Have a project idea? Join Phantom Hack Club and turn your vision into reality with mentorship and collaboration.
             </p>
             <div className="text-center">
-              <a 
-                href="/contact" 
+              <a               
+               href="https://dashboard.hackclub.com/join-club?code=3UOM9TXZ" 
+               target="_blank" 
+               rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-gradient-to-r from-[#00ffff] to-[#0077ff] text-black font-bold rounded-full hover:from-[#00ccff] hover:to-[#0055ff] transition-all duration-300 shadow-[0_0_15px_#00ffff] hover:shadow-[0_0_25px_#00ffff]"
               >
                 Join Phantom Hack Club
