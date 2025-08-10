@@ -57,7 +57,7 @@ function ProjectsPage() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/images/pic14.png"
+                    src="/images/pic14.jpeg"
                     alt="ConnectEd Project" 
                     className="rounded-lg w-full h-48 object-cover"
                   />
