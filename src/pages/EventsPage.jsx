@@ -1,14 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Events from '@/components/Events';
 import ParticlesBackground from '@/components/ParticlesBackground';
 
 function EventsPage() {
+  const [messageVisible, setMessageVisible] = useState(false);
+
   useEffect(() => {
     document.title = "Phantom Hack Club | Events";
-    
-    // Scroll to top when page loads
     window.scrollTo(0, 0);
   }, []);
+
+  const handleIdeaClick = (e) => {
+    e.preventDefault();
+    setMessageVisible(true);
+    setTimeout(() => {
+      window.location.href = "/contact";
+    }, 1500); // Wait 1.5s before redirect
+  };
 
   return (
     <div className="min-h-screen relative pt-32">
@@ -23,15 +31,16 @@ function EventsPage() {
               Join us for exciting hackathons, workshops, tech talks, and networking events designed to inspire innovation and foster a community of tech enthusiasts.
             </p>
           </div>
-          
+
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-8 font-orbitron text-white">Upcoming Events</h2>
             <Events showAll={true} />
           </div>
-          
+
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-8 font-orbitron text-white">Past Events Highlights</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* --- Past Event Cards --- */}
               <div className="bg-black/50 p-6 rounded-xl border border-[#00ffff]/30 hover:border-[#00ffff] transition-all duration-300 group">
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-[#00ffff] transition-colors">Summer Hackathon 2024</h3>
                 <p className="text-gray-300 mb-4">A 48-hour coding marathon where participants built innovative solutions for environmental challenges.</p>
@@ -48,7 +57,7 @@ function EventsPage() {
                   />
                 </div>
               </div>
-              
+
               <div className="bg-black/50 p-6 rounded-xl border border-[#00ffff]/30 hover:border-[#00ffff] transition-all duration-300 group">
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-[#00ffff] transition-colors">AI Workshop Series</h3>
                 <p className="text-gray-300 mb-4">A series of hands-on workshops exploring the fundamentals of artificial intelligence and machine learning.</p>
@@ -65,7 +74,7 @@ function EventsPage() {
                   />
                 </div>
               </div>
-              
+
               <div className="bg-black/50 p-6 rounded-xl border border-[#00ffff]/30 hover:border-[#00ffff] transition-all duration-300 group">
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-[#00ffff] transition-colors">Tech Talk: Future of Web3</h3>
                 <p className="text-gray-300 mb-4">An insightful discussion on blockchain technology, cryptocurrencies, and the future of decentralized web.</p>
@@ -82,7 +91,7 @@ function EventsPage() {
                   />
                 </div>
               </div>
-              
+
               <div className="bg-black/50 p-6 rounded-xl border border-[#00ffff]/30 hover:border-[#00ffff] transition-all duration-300 group">
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-[#00ffff] transition-colors">Game Development Workshop</h3>
                 <p className="text-gray-300 mb-4">A hands-on workshop on building interactive games using modern frameworks and game engines.</p>
@@ -101,7 +110,8 @@ function EventsPage() {
               </div>
             </div>
           </div>
-          
+
+          {/* Proposal Section */}
           <div className="mb-20 bg-black/50 p-8 rounded-xl border border-[#00ffff]/30">
             <h2 className="text-3xl font-bold text-center mb-6 font-orbitron text-white">Want to Propose an Event?</h2>
             <p className="text-center text-lg mb-8">
@@ -110,10 +120,16 @@ function EventsPage() {
             <div className="text-center">
               <a 
                 href="/contact" 
+                onClick={handleIdeaClick}
                 className="inline-block px-8 py-3 bg-gradient-to-r from-[#00ffff] to-[#0077ff] text-black font-bold rounded-full hover:from-[#00ccff] hover:to-[#0055ff] transition-all duration-300 shadow-[0_0_15px_#00ffff] hover:shadow-[0_0_25px_#00ffff]"
               >
                 Submit Your Idea
               </a>
+              {messageVisible && (
+                <p className="mt-4 text-[#00ffff] font-bold">
+                  Mail us your idea at phantompulse@hackclub.com
+                </p>
+              )}
             </div>
           </div>
         </div>
